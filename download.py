@@ -2,7 +2,7 @@ import requests
 import shutil
 import os
 
-from . import auth
+import auth
 
 DOWNLOAD_URL = "https://api.sketchfab.com/v3/models/{}/download"
 
@@ -48,7 +48,7 @@ def download_model(model_uid, file_path):
 
     Keyword arguments:
     model_uid -- The unique identifier of the model.
-    file_path -- The folder to store the downloaded model to. 
+    file_path -- The folder to store the downloaded model to.
     """
 
     data = _get_download_url(model_uid)
