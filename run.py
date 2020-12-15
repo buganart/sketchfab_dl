@@ -19,7 +19,10 @@ def unpack_args(fun):
 @unpack_args
 def download(uid, path):
     path.mkdir(parents=True, exist_ok=True)
-    download_model(uid, str(path))
+    try:
+        download_model(uid, str(path))
+    except Exception as exc:
+        print(f"Failed to download {uid}: {exc}")
 
 
 @click.command()
