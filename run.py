@@ -37,7 +37,7 @@ def main(count, query, num_threads, output_dir):
     auth.set_api_token(token)
 
     # Search parameters see: https://docs.sketchfab.com/data-api/v3/index.html#/search
-    params = {"type": "models", "q": "hand", "downloadable": True, "count": count}
+    params = {"type": "models", "q": query, "downloadable": True, "count": count}
 
     # Get a collection of models from the search API
     models = search.search_results(params)
